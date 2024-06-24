@@ -36,6 +36,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  test:
+    runs-on: self-hosted
 
+    needs: [build]
+    
+    steps:
       - name: Test
         uses: ./test
